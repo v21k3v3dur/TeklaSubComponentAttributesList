@@ -38,8 +38,10 @@ namespace TeklaSubComponentAttributesList
         {
             model.SubCompName=componentCatalog.SelectedName;
             model.SubCompNumber=componentCatalog.SelectedNumber;
+
             componentNameBox.Text=model.SubCompName;
             componentNumberBox.Text = model.SubCompNumber.ToString();
+            Tools.FillDropBoxWithAttributeFiles(this.attributesCb, model.SubCompName);
         }
     }
 }
