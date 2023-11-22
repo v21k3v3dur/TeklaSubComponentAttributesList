@@ -6,16 +6,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeklaSubComponentAttributesList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Demo app" Height="350" Width="500">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -24,7 +24,7 @@
             Grid.Column="1">
             
         <TextBlock 
-            Text="Attributes file testing app"
+            Text="Attribute file testing app"
             HorizontalAlignment="Center"
             FontWeight="Bold"
             FontSize="15"

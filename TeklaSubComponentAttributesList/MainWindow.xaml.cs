@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tekla.Structures.Model;
 
 namespace TeklaSubComponentAttributesList
 {
@@ -25,6 +26,7 @@ namespace TeklaSubComponentAttributesList
         {
             InitializeComponent();
             model = new MainWindowDataModel();
+            model.ConnectionStatus = CheckConnectionStatus();
 
             ConnectionLabelTextBlock.Text = model.ConnectionStatus;
         }
@@ -42,6 +44,19 @@ namespace TeklaSubComponentAttributesList
             componentNameBox.Text=model.SubCompName;
             componentNumberBox.Text = model.SubCompNumber.ToString();
             Tools.FillDropBoxWithAttributeFiles(this.attributesCb, model.SubCompName);
+        }
+        private string CheckConnectionStatus()
+        {
+            string output = "No Connection to Tekla!";
+            Model model = new Model();
+            var result= model.GetConnectionStatus();
+
+            if (result)
+            {
+                output = "Connected to Tekla.";
+            }
+
+            return output;
         }
     }
 }
